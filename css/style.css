@@ -1,0 +1,467 @@
+/* рамер макета 1920px, размер монитора 1350 px
+    коэффициент перехода  -> ~0.7 
+
+*/
+@font-face {
+    font-family: 'PT Root UI Medium';
+    src: url('../fonts/PT Root UI_Medium.eot');
+    src: local('☺'), url('../fonts/PT Root UI_Medium.woff') format('woff'), url('../fonts/PT Root UI_Medium.ttf') format('truetype'), url('../fonts/PT Root UI_Medium.svg') format('svg');
+    font-weight: medium;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Root UI Regular';
+    src: url('../fonts/PT Root UI_Regular.eot');
+    src: local('☺'), url('../fonts/PT Root UI_Regular.woff') format('woff'), url('../fonts/PT Root UI_Regular.ttf') format('truetype'), url('../fonts/PT Root UI_Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Root UI Bold';
+    src: url('../fonts/PT Root UI_Bold.eot');
+    src: local('☺'), url('../fonts/PT Root UI_Bold.woff') format('woff'), url('../fonts/PT Root UI_Bold.ttf') format('truetype'), url('../fonts/PT Root UI_Bold.svg') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+body {
+    background-color: #E5E5E5;
+    /* при переполнении из-за кляксы, 
+    чтобы не создавалось скролла */
+    overflow-x: hidden;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* правая клякса */
+.top-right-corner-block {
+    position: relative;
+    top: -250px;
+    left: -520px;
+    z-index: -1;
+}
+
+/* левая клякса*/
+.left-bottom-corner-block {
+    margin-top: -500px;
+    margin-left: -20px;
+    z-index: 1;
+}
+
+/* контент 
+
+/*--------<HEADER>---------*/
+/*-------------------------*/
+/* .header {
+
+}
+ */
+
+
+/* заголовки */
+.titles {
+    display: flex;
+    height: 82px;
+    /* 82 px header до main 149px*/
+    justify-content: center;
+    align-items: center;
+}
+
+/* элемент заголовка */
+.titles__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 60px;
+    z-index: 2;
+}
+
+/* ссылка заголовка */
+.titles__link {
+    font-family: 'PT Root UI Bold';
+    font-weight: bold;
+    color: #000;
+    font-size: 16.8px;
+    line-height: 20.16px;
+    text-decoration: none;
+    transition: border 0.4s;
+}
+
+.titles__link:hover {
+    cursor: pointer;
+    /* text-decoration: underline; */
+    border-bottom:solid rgb(29, 28, 28) 3px;
+    border-top: solid rgb(29, 28, 28) 3px;
+}
+
+
+/* общий класс круг */
+.circle {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+/* цвет активного круга*/
+.circle_active {
+    background-color: #ff5f33;
+}
+
+/* for X-Smal screens */
+@media (max-width: 576px) {
+    .titles {
+        flex-direction: column;
+    }
+
+    .titles__item {
+        flex-direction: row;
+    }
+
+    .circle {
+        display: none;
+    }
+
+    .titles__link {
+        margin: 20px 0 0 0;
+    }
+}
+
+/* for Large screens*/
+@media (max-width: 992px) {
+    .about__img {
+        margin-left: 0 !important;
+    }
+
+    .about__salad img {
+        display: none;
+    }
+}
+
+/* меньше 890 пикселей */
+@media (max-width: 890px) {
+    /* .basics__content {
+        flex-direction: column;
+    } */
+}
+
+@media (max-width: 946px) {
+    .standarts-content {
+        flex-direction: column;
+    }
+
+    .content__documents {
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .backpack-img {
+        margin-left: 20px !important;
+    }
+}
+
+@media (max-width: 862px) {
+    .questions-content>.questions-content__item {
+        width: 500px !important;
+    }
+
+    .spoiler i {
+        position: relative;
+        left: 400px !important;
+        /* left: 400px; */
+    }
+}
+
+
+
+/*-------------------------*/
+/*--------</HEADER>---------*/
+
+
+/*-------------------------*/
+/*--------<MAIN>---------*/
+
+
+
+/*--------<ABOUT>---------*/
+.about {
+    display: flex;
+    justify-content: center;
+    margin-top: 156px;
+    height: 267px;
+}
+
+.about__item {
+    margin-left: 105px;
+}
+
+.about__info {
+    min-width: 396px;
+    margin-left: 1100px;
+}
+
+.about__img {
+    position: relative;
+    top: -90px;
+    z-index: 2;
+}
+
+.about__img .about__salad img {
+    width: 432px;
+    height: 357px;
+}
+
+
+.about__title {
+    font-family: 'PT Root UI Bold';
+    font-size: 38.4px;
+    line-height: 44.2px;
+    margin-bottom: 35px;
+}
+
+.about__text {
+    font-family: 'PT Root UI Regular';
+    font-size: 18px;
+    line-height: 20px;
+    color: #a4a4a4;
+}
+
+
+
+/*--------</ABOUT>---------*/
+
+
+/*--------<BASICS>---------*/
+
+.basics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 50px 0;
+}
+
+.basics__content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* width: 951px; */
+    padding-bottom: 50px;
+    background-color: #f3f3f3;
+    border-radius: 20px;
+}
+
+.content__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.cheese .basics__text {
+    margin-right: 40px;
+}
+
+.main-title {
+    font-family: 'PT Root UI Bold';
+    font-size: 20px;
+    line-height: 24px;
+    color: #FF5F33;
+    margin-top: 53px;
+    text-align: center;
+}
+
+.sub-title {
+    font-family: 'PT Root UI Bold';
+    font-size: 28px;
+    line-height: 33.6px;
+    margin-top: 16px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+
+
+.basics__titles {
+    text-align: center;
+}
+
+.basics__text {
+    font-family: 'PT Root UI Regular';
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 36.4px;
+    color: #a4a4a4;
+}
+
+
+
+.content-img {
+    margin-top: 32.2px;
+}
+
+
+.content-img {
+    position: relative;
+    left: -16px;
+}
+
+.apple-img {
+    position: relative;
+    top: -25px;
+
+
+    margin-bottom: -44px;
+    background-size: 127px 141px;
+}
+
+.fish-img {
+    background-size: 121.5px 112.4px;
+}
+
+.cheese-img {
+    background-size: 107.8px 111.4px;
+}
+
+/*--------</BASICS>---------*/
+
+
+/*--------<STANDARTS>---------*/
+
+.backpack-img {
+    display: inline-block;
+    margin-left: 250px;
+}
+
+
+.backpack-img img {
+    height: 416px;
+    width: 420px;
+}
+
+.standarts-content {
+    display: flex;
+    justify-content: center;
+}
+
+.content__documents {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 61.6px;
+}
+
+.standarts__document {
+    width: 181px;
+    height: 194.6px;
+    /* что-то перекрывало цвет документа*/
+    background-color: #f3f3f3 !important;
+    margin: 10px;
+    background: url('../img/document89-117.png');
+    background-size: 45px 46.3px;
+    background-repeat: no-repeat;
+    background-position: 90% 90%;
+    border-radius: 20px 0 20px 0;
+}
+
+.flex-break {
+    width: 100%;
+}
+
+.document__title {
+    font-family: 'PT Root UI Bold';
+    font-size: 14px;
+    line-height: 16.8px;
+    padding: 23px 0 0 16px;
+    border-color: inherit;
+}
+
+.document__text {
+    font-family: 'PT Root UI Regular';
+    font-size: 11px;
+    line-height: 15px;
+    padding: 17px 0 0 16px;
+    border-color: inherit;
+    color: #a4a4a4;
+}
+
+/*--------</STANDARTS>---------*/
+
+
+/*--------<QUESTIONS>---------*/
+
+
+
+.questions-content {
+    display: flex;
+    flex-direction: column;
+    background: #e5e5e5;
+    padding: 2px 4px;
+    user-select: none;
+}
+
+.questions-content>.questions-content__item {
+    font-family: 'PT Root UI Medium';
+    font-size: 16px;
+    line-height: 15px;
+    width: 840px;
+    margin: 6px 252px;
+
+    background: #f3f3f3;
+    /* отступ текста от краев*/
+    padding: 20px 0 8px 50px;
+    z-index: 2;
+}
+
+.spoiler {
+    position: relative;
+}
+
+.spoilerContent {
+    font-family: 'PT Root UI Regular';
+    font-size: 16px;
+    line-height: 20.8px;
+    padding: 0 0 20px 0;
+    display: block;
+    margin-top: 10px;
+    color: #a4a4a4;
+}
+
+.spoiler span {
+    display: none;
+}
+
+.spoiler.revealed span {
+    display: block;
+}
+
+.spoiler i {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    top: -15px;
+    left: 720px;
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid #f68a46;
+    border-right: 2px solid #f68a46;
+    transform: rotate(135deg);
+    transition: background-color 1s;
+}
+
+.spoiler i:hover {
+    background-color: #f68a46;
+}
+
+
+.spoiler.revealed i {
+    transform: rotate(-45deg);
+}
+
+/*--------</QUESTIONS>---------*/
